@@ -18,7 +18,16 @@ class TweetRepository {
       console.log(err);
     }
   }
-
+  
+  async getAllTweet() {
+    try {
+      const tweet = await Tweets.find();
+      return tweet;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
   async getWithComments(id) {
     try {
       const tweet = await Tweets.findById(id).populate({path: 'comments'});
