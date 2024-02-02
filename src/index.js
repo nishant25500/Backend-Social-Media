@@ -17,16 +17,4 @@ app.listen(PORT, async () => {
   await connect();
   console.log("Database connected");
 
-  const tweets = new TweetRepository();
-  const tweet = await tweets.getAllTweet();
-    // console.log(tweet);
-//   const new_comment = await Comment.create({
-//     content: "comment form new schema",
-//   });
-console.log(tweet)
-//   console.log(tweet.contentWithEmail);
-//   tweet.comments.push(new_comment);
-
-//   await tweet.save();
-
 });
