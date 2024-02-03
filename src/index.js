@@ -1,17 +1,16 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const connect = require("./config/database");
+import { connect } from "./config/database.js";
 
-var bodyParser = require('body-parser')
-const apiRoutes = require('./routes/index');
+import bodyParser from "body-parser";
 
+import apiRoutes from "./routes/index.js";
 
 const PORT = 3000;
 
-
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}))
-app.use('/api',apiRoutes);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/api", apiRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
