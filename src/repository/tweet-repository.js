@@ -1,7 +1,13 @@
 // const Tweets = require("../models/tweet");
 import Tweets from '../models/tweet.js'
+import CrudRepository from './crud-repository.js';
 
-class TweetRepository {
+class TweetRepository extends CrudRepository{
+  
+  constructor(){
+    super(Tweets);   //for some operation we can refer CrudRepository there common operations are stored
+  }
+
   async create(data) {
     try {
       const tweet = await Tweets.create(data);
@@ -11,15 +17,6 @@ class TweetRepository {
     }
   }
 
-  async get(id) {
-    try {
-      const tweet = await Tweets.findById(id);
-      return tweet;
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  
   async getAllTweet() {
     try {
       const tweet = await Tweets.find();
