@@ -1,10 +1,10 @@
-import mongoose from '.mongoose';
+import mongoose from 'mongoose';
 
 const likeSchema = mongoose.Schema({
     onModel: {
         type: String,
         required: true,
-        enum: ['Tweet','Comment'] 
+        enum: ['Tweets','Comment'] 
     },
     likeable: {
         type: String,

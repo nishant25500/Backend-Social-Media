@@ -7,10 +7,10 @@ const tweetSchema = new mongoose.Schema({
         required: true,
         max: [250,'Max 250 characters are allowed']
     },
-    hashtags: [
+    likes: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Hashtag'
+            ref: 'Like'
         }
     ]
 }, {timestamps: true});
@@ -21,5 +21,6 @@ const tweetSchema = new mongoose.Schema({
 // })
 
 const Tweets = mongoose.model('Tweets',tweetSchema);
-// module.exports = Tweets;
 export default Tweets;
+// module.exports = Tweets;
+
