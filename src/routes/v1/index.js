@@ -3,8 +3,10 @@ import express from 'express';
 const router = express.Router();
 // const {createTweet} = require('../../controllers/tweet-controller');
 import { createTweet } from '../../controllers/tweet-controller.js';
+import { toggleLike } from '../../controllers/like-controller.js';
 
 router.post('/tweets',createTweet);
+router.post('/likes/toggle',toggleLike);
 
 // module.exports = router;
 export default router;
