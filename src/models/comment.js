@@ -7,20 +7,26 @@ const commentSchema = new mongoose.Schema({
         required: true,
     },
     userId: {
-      type: mongoose.Schema.Types.ObjectId(),
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
     },
     onModel: {
       type: String,
       required: true,
-      enum: ['Tweet','Comment']
+      enum: ['Tweets','Comment']
     },
     commentable: {
-      type: mongoose.Schema.Types.ObjectId(),
+      type: mongoose.Schema.Types.ObjectId,
       reqiured: true,
       refPath: 'onModel',
-    }
+    },
+    comments: [
+      {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Comment'
+      }
+  ]
 }, {timestamps: true});
 
 const Comment = mongoose.model('Comment',commentSchema);

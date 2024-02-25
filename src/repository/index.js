@@ -5,6 +5,7 @@ export {HashtagRepository} from './hashtags-repository.js';
 export {TweetRepository}  from './tweet-repository.js';
 export {LikeRepository}  from './like-repository.js';
 export {UserRepository}  from './user-repository.js';
+export {CommentRepository} from './comments-repository.js';
 
 // module.exports = {
 //     TweetRepository,
